@@ -351,7 +351,7 @@ new EmberApp(defaults, {
 });
 ```
 
-#### Before/After Plugins
+#### Before/After/Post-Process Plugins
 
 By default, any plugins you specify will be applied after the module transformation. To apply a set of plugins beforehand instead, you can pass a hash with `before` and `after` keys. For instance, if you wanted to use [postcss-nested](https://github.com/postcss/postcss-nested) so that you could define a set of global classes as a single block:
 
@@ -364,6 +364,23 @@ new EmberApp(defaults, {
       ],
       after: [
         autoprefixer('last 2 versions')
+      ]
+    }
+  }
+});
+```
+
+You can also provide a set of `postprocess` plugins that will run on the file after it has been concatenated.  This is useful for plugins like `postcss-sprites`, that behave better when run against a single file.
+
+```js
+new EmberApp(defaults, {
+  cssModules: {
+    plugins: {
+      after: [
+        // ...
+      ],
+      postprocess: [
+        require('postcss-sprites')({ ... })
       ]
     }
   }
