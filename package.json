@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/salsify/ember-css-modules#readme",
   "devDependencies": {
+    "broccoli-persistent-filter": "^1.2.11",
     "ember-ajax": "^2.4.1",
     "ember-browserify": "^1.1.13",
     "ember-cli": "^2.8.0",
@@ -54,7 +55,6 @@
     "broccoli-css-modules": "^0.5.2",
     "broccoli-funnel": "^1.0.7",
     "broccoli-merge-trees": "^1.1.1",
-    "broccoli-postcss": "^3.2.0",
     "debug": "^2.2.0",
     "ember-cli-babel": "^5.1.5",
     "ember-getowner-polyfill": "^1.1.1",
