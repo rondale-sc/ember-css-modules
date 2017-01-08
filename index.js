@@ -30,6 +30,7 @@ module.exports = {
 
     if (this.belongsToAddon()) {
       this.verifyStylesDirectory();
+      this.parentAddon = parent;
     }
 
     this._super.included.apply(this, arguments);
@@ -98,6 +99,10 @@ module.exports = {
 
   getPostcssOptions: function() {
     return this.options.postcssOptions;
+  },
+
+  getParentAddonTree: function() {
+    return path.join(this.parentAddon.root, this.parentAddon.treePaths.addon);
   },
 
   enableSourceMaps: function() {
