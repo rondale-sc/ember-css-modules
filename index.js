@@ -1,8 +1,8 @@
 /* eslint-env node */
 'use strict';
 
-var path = require('path');
 var fs = require('fs');
+var path = require('path');
 var debug = require('debug')('ember-css-modules:addon');
 
 var HtmlbarsPlugin = require('./lib/htmlbars-plugin');
